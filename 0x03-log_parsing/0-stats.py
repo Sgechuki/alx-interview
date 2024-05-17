@@ -10,8 +10,7 @@ from typing import Dict
 
 
 pattern: str = (
-        r'^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - \[(.*?)\] '
-        r'"GET /projects/260 HTTP/1\.1" (\d{3}) (\d+)'
+        r'^(\S+)\s*-?\s*\[(.*?)\] "GET /projects/260 HTTP/1\.1" (\d{3}) (\d+)'
         )
 n_line: int = 0
 t_size: int = 0
