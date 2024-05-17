@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Task 0: Minimum Operations
-""" 
+"""
 
 
 def minOperations(n):
@@ -14,7 +14,7 @@ def minOperations(n):
     i = 2
     while i <= number:
         while number % i == 0:
-            number = number / 2
+            number = number / i
             n_ops = n_ops + i
         i += 1
     return n_ops
