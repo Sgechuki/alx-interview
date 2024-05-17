@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Task 0: Log parsing
-Input format: <IP Address> - [<date>] 
+Input format: <IP Address> - [<date>]
 "GET /projects/260 HTTP/1.1" <status code> <file size>
 """
 import re
@@ -44,5 +44,5 @@ if __name__ == "__main__":
             if n_line % 10 == 0:
                 print_stats(t_size, stat_code)
     except KeyboardInterrupt:
-    i    print_stats(t_size, stat_code)
+        print_stats(t_size, stat_code)
         raise
