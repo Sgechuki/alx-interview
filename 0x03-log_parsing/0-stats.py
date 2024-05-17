@@ -10,7 +10,7 @@ from typing import Dict
 
 
 pattern: str = (
-        r'^(\S+)\s*-?\s*\[(.*?)\] "GET /projects/260 HTTP/1\.1" (\d{3}) (\d+)'
+        r'^(\S+)(?: -)? \[(.*?)\] "GET /projects/260 HTTP/1\.1" (\S+) (\S+)'
         )
 n_line: int = 0
 t_size: int = 0
@@ -33,7 +33,10 @@ if __name__ == "__main__":
             n_line += 1
             match = re.match(pattern, line)
             if match:
-                status_code: int = int(match.group(3))
+                try:
+                    status_code: int = int(match.group(3))
+                except Exception:
+                    pass
                 file_size: int = int(match.group(4))
                 t_size += file_size
                 if status_code not in stat_code.keys():
