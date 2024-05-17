@@ -32,7 +32,7 @@ if __name__ == "__main__":
     try:
         for line in sys.stdin:
             n_line += 1
-            match = re.fullmatch(pattern, line)
+            match = re.match(pattern, line)
             if match:
                 status_code: int = int(match.group(3))
                 file_size: int = int(match.group(4))
@@ -44,5 +44,6 @@ if __name__ == "__main__":
             if n_line % 10 == 0:
                 print_stats(t_size, stat_code)
     except KeyboardInterrupt:
+        pass
+    finally:
         print_stats(t_size, stat_code)
-        raise
