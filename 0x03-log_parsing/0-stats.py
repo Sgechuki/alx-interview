@@ -15,7 +15,7 @@ pattern: str = (
 )
 n_line: int = 0
 t_size: int = 0
-stat_code: Dict[int] = {}
+stat_code: Dict[int, int] = {}
 
 
 def print_stats(t_size: int, stat_code: Dict[int, int]) -> None:
