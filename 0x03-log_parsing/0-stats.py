@@ -10,9 +10,9 @@ from typing import Dict
 
 
 pattern: str = (
-        r'^(\S+)(?: -|\s-\s|\s-)?\s?\[(.*?)\] '
-        r'"GET /projects/260 HTTP/1\.1" (\d{3}|[A-Za-z]+) (\d+)$'
-        )
+    r'^(\S+)(?: -|\s-\s|\s-)?\s?\[(.*?)\] '
+    r'"GET /projects/260 HTTP/1\.1" (\d{3}|[A-Za-z]+) (\d+)$'
+)
 n_line: int = 0
 t_size: int = 0
 stat_code = {}
