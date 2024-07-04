@@ -1,6 +1,20 @@
 #!/usr/bin/python3
+"""
+Task 0: Prime Game
+"""
+
+
 def isWinner(x, nums):
+    """
+    x is the number of rounds and nums is an array of n
+    Return: name of the player that won the most rounds
+    """
     def sieve(max_n):
+        """
+        generates all primes up to the maximum number in nums
+        returns a list of primes and a boolean list indicating
+        if an index is a prime
+        """
         is_prime = [True] * (max_n + 1)
         is_prime[0] = is_prime[1] = False  # 0 and 1 are not primes
         p = 2
@@ -13,6 +27,9 @@ def isWinner(x, nums):
         return primes, is_prime
 
     def play_game(n, primes, is_prime):
+        """
+        simulates one round of the game
+        """
         primes_set = set(primes)
         remaining = set(range(1, n + 1))
         turn = 0  # 0 for Maria, 1 for Ben
